@@ -21,10 +21,10 @@ build:
         with:
           path: .
           node-version: 22
-        env: # <--- これを追加！
+        env:
           MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
-
+          
   deploy:
     needs: build
     runs-on: ubuntu-latest
