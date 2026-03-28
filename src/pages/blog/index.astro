@@ -7,9 +7,9 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+import { client } from "../lib/microcms";
+const response = await client.get({ endpoint: "blog" });
+const posts = response.contents;
 ---
 
 <!doctype html>
