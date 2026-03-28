@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,6 +21,9 @@ jobs:
         with:
           path: .
           node-version: 22
+        env: # <--- これを追加！
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
 
   deploy:
     needs: build
