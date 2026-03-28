@@ -20,4 +20,4 @@ jobs:
         uses: withastro/action@v3
         with:
           path: .
-          node-version: 22 # ここを22に指定して警告を回避します
+          node-version: 22 # ここを22に,指定して警告を回避します
