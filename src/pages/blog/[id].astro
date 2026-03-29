@@ -23,7 +23,7 @@ const post = await client.get({ endpoint: "blog", contentId: id });
   </style>
 </head>
 <body>
-  <a href="/blog">← 記事一覧へ戻る</a>
+  <a href="/my_portfolio/blog">← 記事一覧へ戻る</a>
   <h1>{post.title}</h1>
   <hr>
   <div set:html={post.content} />
