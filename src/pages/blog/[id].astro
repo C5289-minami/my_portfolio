@@ -1,8 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
 import { client } from "../../lib/microcms";
 
-// 1. 全ての記事のIDを取得して、ページを作る準備
 export async function getStaticPaths() {
   const response = await client.get({ endpoint: "blog" });
   return response.contents.map((post: any) => ({
@@ -10,14 +8,24 @@ export async function getStaticPaths() {
   }));
 }
 
-// 2. その記事のデータを取ってくる
 const { id } = Astro.params;
 const post = await client.get({ endpoint: "blog", contentId: id });
 ---
 
-<Layout title={post.title}>
-  <main style="max-width: 700px; margin: 0 auto; padding: 2rem;">
-    <h1>{post.title}</h1>
-    <div set:html={post.content} />
-  </main>
-</Layout>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>{post.title}</title>
+  <style>
+    body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem; }
+    img { max-width: 100%; height: auto; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <a href="/blog">← 記事一覧へ戻る</a>
+  <h1>{post.title}</h1>
+  <hr>
+  <div set:html={post.content} />
+</body>
+</html>
