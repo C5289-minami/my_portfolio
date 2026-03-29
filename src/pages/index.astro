@@ -5,45 +5,36 @@ import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Minami's Portfolio</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding-top: 100px; background: #111; color: white; }
+    h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+    p { color: #888; margin-bottom: 2rem; }
+    .nav-links a {
+      display: inline-block;
+      margin: 0 15px;
+      color: #4f39fa;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #4f39fa;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .nav-links a:hover { background: #4f39fa; color: white; }
+  </style>
+</head>
+<body>
+  <h1>Minami's Portfolio</h1>
+  <p>18-year-old Engineer / Creator</p>
+  
+  <nav class="nav-links">
+    <a href="/my_portfolio/blog">Blog (制作ログ)</a>
+    <a href="/my_portfolio/about">About Me</a>
+  </nav>
+</body>
 </html>
